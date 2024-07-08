@@ -27,7 +27,7 @@ public class MemoryMemberRepository implements MemberRepository {
 
     @Override
     public Optional<Member> findByName(String name) {
-//        람다형식
+//        람다식 - 메서드를 하나의 식으로 표현한것. 메서드를 람다식으로 표현하면 메서드의 이름과 반환값이 없어지므로 익명함수라고도 한다.
         return store.values().stream()
                 .filter(member -> member.getName().equals(name))
                 .findAny();
