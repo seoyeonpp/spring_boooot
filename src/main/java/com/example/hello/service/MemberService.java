@@ -3,14 +3,19 @@ package com.example.hello.service;
 import com.example.hello.domain.Member;
 import com.example.hello.repository.MemberRepository;
 import com.example.hello.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MemberService {
+//    service에서 비즈니스 로직을 처리
     private final MemberRepository memberRepository;
 
-//    dependency injection == DI
+//    dependency injection == DI 의존성 주입
+    @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
