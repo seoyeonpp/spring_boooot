@@ -8,7 +8,7 @@ import java.util.*;
 
  // 동시성 문제란? 여러 사용자가 동시에 하나의 대상에 요청을 할때, 시스템이 어떤 순서로 이를 처리할지 결정해야하는 상황을 말한다.
  // 동시성 문제가 고려되어 있지 않음, 실무에서는 ConcurrentHashMap, AtomicLong 사용 고려
-@Repository
+//@Repository
 public class MemoryMemberRepository implements MemberRepository {
 //    repository에서 데이터를 저장하고 관리
 
