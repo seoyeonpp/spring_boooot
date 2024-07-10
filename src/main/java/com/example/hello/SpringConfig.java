@@ -1,5 +1,6 @@
 package com.example.hello;
 
+import com.example.hello.aop.TimeTraceAop;
 import com.example.hello.repository.*;
 import com.example.hello.service.MemberService;
 import jakarta.persistence.EntityManager;
@@ -27,6 +28,12 @@ public class SpringConfig {
     public MemberService memberService() {
         return new MemberService(memberRepository);
     }
+
+//    스프링빈에 AOP 등록
+//    @Bean
+//    public TimeTraceAop timeTraceAop() {
+//        return new TimeTraceAop();
+//    }
 
 //    이건 jdbc 사용할때
 //    private final DataSource dataSource;

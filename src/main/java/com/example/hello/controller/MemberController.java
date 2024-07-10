@@ -22,6 +22,9 @@ public class MemberController {
     @Autowired
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
+
+        // AOP를 띄우면 프록시 클래스로 띄워지는지 확인
+        System.out.println("memberService = " + memberService.getClass());
     }
 
 //    DI 방법 2. 필드 주입 -> 별로 안좋음.

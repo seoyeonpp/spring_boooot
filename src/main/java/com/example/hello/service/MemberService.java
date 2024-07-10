@@ -33,9 +33,24 @@ public class MemberService {
 //            throw new IllegalStateException("이미 존재하는 회원입니다.");
 //        });
 
+
         // 위 로직을 더 깔끔하게 작성
         validateDuplicateMember(member);
         memberRepository.save(member);
+
+//        시간 측정 로직을 각 메서드마다 쓴다면..?! ?!
+//        long start = System.currentTimeMillis();
+
+       /* try {
+            validateDuplicateMember(member);
+            memberRepository.save(member);
+        } finally {
+            long finish = System.currentTimeMillis();
+            long timeMs = finish - start;
+
+            System.out.println("join = " + timeMs + "ms");
+        }*/
+
 
        return member.getId();
     }
