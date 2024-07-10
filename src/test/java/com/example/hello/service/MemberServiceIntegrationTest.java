@@ -23,7 +23,7 @@ public class MemberServiceIntegrationTest {
     @Autowired MemberRepository memberRepository;
 
     @Test
-    // @Commit - 테스트케이스에 이 어노테이션이 있으면 테스트가 끝나고 나서도 롤백을 하지 않고 커밋을 해줌.
+    // @Commit // - 테스트케이스에 이 어노테이션이 있으면 테스트가 끝나고 나서도 롤백을 하지 않고 커밋을 해줌.
     void join() {
         // given
         Member member = new Member();
