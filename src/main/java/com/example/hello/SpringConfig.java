@@ -15,10 +15,17 @@ import javax.sql.DataSource;
 @Configuration
 public class SpringConfig {
 
+    // spring data jpa 사용할때
+    private final MemberRepository memberRepository;
+
+    @Autowired
+    public SpringConfig(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     @Bean
     public MemberService memberService() {
-        return new MemberService(memberRepository());
+        return new MemberService(memberRepository);
     }
 
 //    이건 jdbc 사용할때
@@ -26,17 +33,17 @@ public class SpringConfig {
 
 //    @PersistenceContext 원래 스펙에서는 이렇게 받아야하는데 스프링에서 아래와같이 DI 해줌
     // jpa 를 사용한다면 entitymanager을 넘겨줘야하기때문에~
-    private EntityManager em;
-    @Autowired
-    public SpringConfig(EntityManager em) {
-        this.em = em;
-    }
+//    private EntityManager em;
+//    @Autowired
+//    public SpringConfig(EntityManager em) {
+//        this.em = em;
+//    }
 
-    @Bean
-    public MemberRepository memberRepository() {
+//    @Bean
+//    public MemberRepository memberRepository() {
 //        return new MemoryMemberRepository();
 //        return new JdbcMemberRepository(dataSource);
 //        return new JdbcTemplateMemberRepository(dataSource);
-        return new JpaMemberRepository(em);
-    }
+//        return new JpaMemberRepository(em);
+//    }
 }
